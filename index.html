@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA - Classificador de Veículos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Reconhecimento de Veículos</h1>
+            <p>Faça upload de uma imagem para a IA analisar</p>
+        </header>
+
+        <main>
+            <div class="upload-area">
+                <input type="file" id="imageUpload" accept="image/*" hidden>
+                <label for="imageUpload" class="btn-upload">Selecionar Foto</label>
+            </div>
+
+            <div class="preview-container">
+                <img id="imagePreview" src="" alt="Prévia da imagem" style="display: none;">
+            </div>
+
+            <div id="loading" style="display: none;">Analisando imagem...</div>
+
+            <div id="result-card" class="result-card" style="display: none;">
+                <h3>Resultado da Predição</h3>
+                <div class="result-row">
+                    <span>Classe detectada:</span>
+                    <strong id="label-result">---</strong>
+                </div>
+                <div class="result-row">
+                    <span>Nível de Confiança:</span>
+                    <strong id="confidence-result">0%</strong>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
